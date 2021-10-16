@@ -29,7 +29,7 @@ entry main
 	NOTE_ON 	=	0x007F0090
 	PROGRAM_CHANGE	=	0x000000C0
 
-	Instruent	=	MIDI_Acoustic_Guitar_steel
+	Instrument	=	MIDI_Acoustic_Guitar_steel
 
 			;	Guitar_0 + 0, Guitar_0 + 0, Guitar_0 + 0, Guitar_0 + 0
 
@@ -96,7 +96,7 @@ entry main
 proc main
 	xor	ebx, ebx
 	invoke	midiOutOpen, hMidiOut, -1, ebx, ebx, ebx
-	invoke	midiOutShortMsg, [hMidiOut], PROGRAM_CHANGE or (Instruent shl 8)
+	invoke	midiOutShortMsg, [hMidiOut], PROGRAM_CHANGE or (Instrument shl 8)
 
 	mov	ecx, [count]
 	lea	esi, [notes]
@@ -187,4 +187,4 @@ end data
 ; In the land of the morning star
 
 ; tabs from	https://www.songsterr.com/a/wsa/scorpions-send-me-an-angel-tab-s27749t0
-; larycs from	https://www.azlyrics.com/lyrics/scorpions/sendmeanangel.html
+; lyrics from	https://www.azlyrics.com/lyrics/scorpions/sendmeanangel.html
